@@ -36,6 +36,16 @@ export default function RegisterPage() {
 
             <form action={onSubmit} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
+                    <label className="text-xs font-bold uppercase text-zinc-400">Имя</label>
+                    <Input
+                        disabled={isLoading}
+                        name="name"
+                        type="text"
+                        placeholder="Ваше имя"
+                        className="bg-zinc-950 border-0 focus-visible:ring-indigo-500"
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
                     <label className="text-xs font-bold uppercase text-zinc-400">Email</label>
                     <Input
                         disabled={isLoading}
