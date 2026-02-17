@@ -5,12 +5,10 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { login } from "@/actions/auth";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const router = useRouter();
 
     const onSubmit = async (formData: FormData) => {
         setIsLoading(true);
@@ -23,7 +21,7 @@ export default function LoginPage() {
                 // Success is handled by redirect in action, but we can also refresh
                 // router.refresh();
             }
-        } catch (e) {
+        } catch {
             setError("Произошла ошибка при входе. Попробуйте еще раз.");
         } finally {
             setIsLoading(false);

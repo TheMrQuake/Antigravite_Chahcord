@@ -5,12 +5,10 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { signup } from "@/actions/auth";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const router = useRouter();
 
     const onSubmit = async (formData: FormData) => {
         setIsLoading(true);
@@ -22,7 +20,7 @@ export default function RegisterPage() {
             } else {
                 // Success is handled by redirect in action
             }
-        } catch (e) {
+        } catch {
             setError("Произошла ошибка при регистрации. Попробуйте еще раз.");
         } finally {
             setIsLoading(false);
