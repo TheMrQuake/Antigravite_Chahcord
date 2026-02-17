@@ -84,7 +84,7 @@ export const FileUpload = ({
             <input {...getInputProps()} />
             <div className="flex flex-col items-center justify-center">
                 <FileIcon className="h-10 w-10 text-zinc-500" />
-                <span className="text-sm text-zinc-500">{isUploading ? "Uploading..." : "Upload an image"}</span>
+                <span className="text-sm text-zinc-500">{isUploading ? "Загрузка..." : "Загрузить изображение"}</span>
             </div>
         </div>
     );
